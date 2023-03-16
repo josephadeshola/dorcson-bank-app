@@ -1,0 +1,11 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.recieptcontainer{
+    height: 37pc;
+    /* width: 27pc ; */
+}span{
+    font-size: 14px;
+}

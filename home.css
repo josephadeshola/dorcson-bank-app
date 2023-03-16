@@ -1,0 +1,585 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar {
+    z-index: 1;
+
+    background-color: rgb(252, 249, 249) !important;
+    box-shadow: 0 0  3px;
+}
+
+.dropbtn {
+    width: 100px; height: 40px; background-color:#ffe672; 
+      
+    animation-name: scale-up-ver-center;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+     
+    background-color: rgb(252, 249, 249) !important;
+}
+
+.navbar-nav {
+    margin-left: 10pc;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 50% !important;
+}
+
+.dropdown button {
+
+    border: none;
+}
+
+
+.servicediv {
+    padding-left: 2pc;
+    border-radius: 5px;
+    height: 19pc;
+}
+
+.servicediv img {
+    height: 4pc;
+    margin-left: 2pc;
+    margin-top: 1pc;
+    margin-bottom: 1pc;
+}
+
+b {
+    font-size: 16px;
+}
+
+.servicediv p {
+    font-size: 16px !important;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 180px;
+    height: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropdown-contents{
+    width: 7pc;
+    background-color: #f1f1f1;
+    display: none;
+    position: absolute;
+    min-width: red;
+    z-index: 1;
+}
+.dropdown-contents a{
+    text-align: center !important;
+    font-size: 13px;
+    color: black;
+   text-decoration: none; 
+   display: block;
+   padding:8px 10px ;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropdown-contents {
+    display: block;
+}
+
+.bordertext {
+   background-image: url(./young-couple-with-smart-phone.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   
+    height: 38pc;
+}
+
+h1 {
+    font-size: 50px !important;
+    margin-top: 13pc !important;
+}
+
+
+
+.imagesize{
+    width: 300pc !important;
+    height: 30pc !important ;
+}
+
+p {
+    margin-top: 3pc;
+    font-size: 20px !important; 
+   
+}
+
+
+.logincontainer {
+    margin-top: 0pc;
+ 
+}
+.signinbtn:hover{
+  background-color: white;
+  color: blue;
+}
+
+
+
+.containinner{
+
+    box-shadow: 0 0 10px;
+    width: 19pc !important;
+    height: 27pc !important;
+    background-color: white;
+    margin-top:0px !important;
+    border-radius: 18px;
+    padding-top: 2pc;
+    
+  }
+  .containg{
+    border-radius: 29px;
+    border: none !important;
+    height: 30pc !important;
+    width: 24pc !important;
+    margin-top:-2pc !important;
+    background-color: rgba(56, 135, 253, 0.986);
+  }
+  .contaings{
+    margin-top:1pc !important;
+    border-radius: 29px;
+    border:none;
+    height: 19pc !important;
+    width: 19pc !important;
+    background-color:rgb(0, 110, 255);
+  }
+  input{
+    box-shadow:  0 0 5px;
+      width: 14pc !important;
+      margin: auto !important;
+  }
+  h6{
+    font-size: 2px !important;
+    margin-left: 1pc;
+    margin-top: 5px !important;
+  }
+  .check{
+    width: 2pc !important;
+  }
+
+  @keyframes scale-up-ver-center {
+          
+      0% {
+          transform:scale(4);
+      }
+      100% {
+          transform:scale(1);
+      }
+  }
+
+
+
+.btnsignin {
+    margin-left:38px !important ;
+    width: 14pc !important;
+    color: white !important;
+    background-color: rgb(0, 47, 255) !important;
+}
+.hrefbtn{
+    text-decoration: none;
+    margin-left:34px !important ;
+    width: 14pc !important;
+    color: white !important;
+    background-color: rgb(0, 47, 255) !important;
+}  
+  
+  .btnsignin:hover{
+    border: 1px solid;
+    background-color: white !important;
+    color: blue !important;
+  }
+ 
+  .modal-content{
+    height: 32pc;
+  }
+  .loginbtn{
+    height: 3pc ;
+  }
+  .bankconnectionimg ,img{
+    display: grid;
+    margin: auto;
+    gap: 2pc;
+    
+    grid-template-columns: repeat(2,1fr);
+  }
+  
+@media (max-width:700px) {
+    .navbar-nav {
+        margin-left: 0px;
+    }
+.logincontainer{
+    display: grid;
+    gap: 1pc;
+    margin: auto !important;
+    margin-left: -3pc;
+    grid-template-columns: repeat(1,1fr);
+}
+.information{
+    margin-top: 27pc !important;
+}
+    .signinbtn {
+        margin-bottom: 3pc;
+        height: 4pc;
+        width: 11pc;
+    }
+    .loginbtn{
+        width: 10pc;
+        height: 4pc ;
+      }
+      .loginbtn:hover{
+        background-color: white !important;
+        color: rgb(221, 83, 83) !important;
+      }
+
+    .signinbtn:hover {
+        background-color: white !important;
+        color: blue !important;
+
+    }
+    .bankconnectionimg ,img{
+        height: 2pc !important;
+    }
+    .bordertext {
+        
+        background-image: url(./young-couple-with-smart-phone.jpg);
+        background-repeat: no-repeat;
+
+        border-bottom-left-radius: 10px ;
+        border-bottom-right-radius: 10px ;
+         height: 37pc;
+     }
+     .bordertext h1{
+        margin-top: 1pc !important;
+        font-size: 30px !important;
+     }
+     
+
+     .bordertext p {
+        margin-top: 0pc;
+        font-size: 20px !important;
+    }
+    .backdrop{
+        border-radius: 10px;
+        margin-top: 16pc;
+        
+        height: 12pc;
+        backdrop-filter: blur(10px);
+    }
+  .logincontainer {
+    margin-left: 2pc;
+    margin: auto !important;
+  }
+
+    .seperate {
+        margin: auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .servicediv {
+        margin: auto;
+        width: 22pc;
+   
+    }
+
+    .servicediv img {
+        height: 4pc;
+        margin-left: 2pc;
+        margin-top: 2pc;
+        margin-bottom: 2pc;
+    }
+
+    b {
+        font-size: 16px;
+    }
+
+    .servicediv p {
+        margin-top: 1px;
+        font-size: 12px !important;
+    }
+
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 255%;
+        font-weight: 700;
+        margin-top: 5pc !important;
+    }
+
+    .borderimg {
+        display: none;
+        width: 39pc;
+        height: 28pc
+    }
+
+    .borderimg img {
+        display: none;
+        height: 30pc;
+    }
+}
+@media (max-width:375px) {
+    .navbar-nav {
+        margin-left: 0px;
+    }
+.logincontainer{
+    display: grid;
+    gap: 2pc;
+    grid-template-columns: repeat(1,1fr);
+}
+.information{
+    margin-top: 27pc !important;
+}
+    .signinbtn {
+        margin-bottom: 3pc;
+        height: 4pc;
+        width: 10pc;
+    }
+    .loginbtn{
+        width: 10pc !important;
+        height: 4pc !important ;
+      }
+      .loginbtn:hover{
+        background-color: white !important;
+        color: rgb(221, 83, 83) !important;
+      }
+
+    .signinbtn:hover {
+        background-color: white !important;
+        color: blue !important;
+
+    }
+    
+    .bankconnectionimg ,img{
+        display: grid;
+    
+        gap: 2pc;
+        margin-left: -6px;
+        height: 2pc !important;
+        
+        grid-template-columns: repeat(2,1fr);
+      }
+    .bordertext {
+        
+        background-image: url(./young-couple-with-smart-phone.jpg);
+        background-repeat: no-repeat;
+
+        border-bottom-left-radius: 10px ;
+        border-bottom-right-radius: 10px ;
+         height: 30pc;
+     }
+     .bordertext h1{
+        margin-top: 1pc !important;
+        font-size: 30px !important;
+     }
+     
+
+     .bordertext p {
+        margin-top: 0pc;
+        font-size: 20px !important;
+    }
+    .backdrop{
+        border-radius: 10px;
+        margin-top: 16pc;
+        
+        height: 12pc;
+        backdrop-filter: blur(10px);
+    }
+  .logincontainer {
+    margin-left: -1pc !important;
+    margin: auto !important;
+  }
+
+    .seperate {
+        margin: auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .servicediv {
+        margin-left: -8px;
+        /* margin: auto; */
+        width: 22pc;
+       
+   
+    }
+
+    .servicediv img {
+        height: pc;
+        margin-left: 2pc;
+        margin-top: 2pc;
+        margin-bottom: 2pc;
+    }
+
+    b {
+        font-size: 16px;
+    }
+
+    .servicediv p {
+        margin-top: 1px;
+        font-size: 12px !important;
+    }
+
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 255%;
+        font-weight: 700;
+        margin-top: 5pc !important;
+    }
+
+    .borderimg {
+        display: none;
+        width: 39pc;
+        height: 28pc
+    }
+
+    .borderimg img {
+        display: none;
+        height: 30pc;
+    }
+}
+@media (max-width:320px) {
+    .navbar-nav {
+        margin-left: 0px;
+    }
+.logincontainer{
+    display: grid;
+    gap: 0pc;
+    grid-template-columns: repeat(1,1fr);
+}
+.information{
+    margin-top: 27pc !important;
+}
+    .signinbtn {
+        margin-bottom: 3pc;
+        height: 4pc;
+        width: 10pc;
+    }
+    .loginbtn{
+        width: 10pc !important;
+        height: 4pc !important ;
+      }
+      .loginbtn:hover{
+        background-color: white !important;
+        color: rgb(221, 83, 83) !important;
+      }
+
+    .signinbtn:hover {
+        background-color: white !important;
+        color: blue !important;
+
+    }
+    .bankconnectionimg ,img{
+        height: 3pc !important;
+    }
+    .bordertext {
+        
+        background-image: url(./young-couple-with-smart-phone.jpg);
+        background-repeat: no-repeat;
+        height: 22pc;
+        
+        border-bottom-left-radius: 10px ;
+        border-bottom-right-radius: 10px ;
+    
+     }
+     .bordertext h1{
+        margin-top: 1pc !important;
+        font-size: 20px !important;
+     }
+     
+
+     .bordertext p {
+        margin-top: 0pc;
+        font-size: 14px !important;
+    }
+    .backdrop{
+        border-radius: 10px;
+        margin-top: 11pc;
+        width: 21pc;
+        height: 10pc;
+        backdrop-filter: blur(10px);
+    }
+  .logincontainer {
+    margin-left: -1pc !important;
+    margin: auto !important;
+  }
+
+    .seperate {
+        margin: auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .servicediv {
+        margin-left: -8px;
+        width: 20pc;
+       
+   
+    }
+
+    .servicediv img {
+        height: 4pc;
+        margin-left: 2pc;
+        margin-top: 2pc;
+        margin-bottom: 2pc;
+    }
+
+    b {
+        font-size: 16px;
+    }
+
+    .servicediv p {
+        margin-top: 1px;
+        font-size: 12px !important;
+    }
+
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 200%;
+        font-weight: 700;
+        margin-top: 5pc !important;
+    }
+
+    .borderimg {
+        display: none;
+        width: 39pc;
+        height: 28pc
+    }
+
+    .borderimg img {
+        display: none;
+        height: 30pc;
+    }  
+}

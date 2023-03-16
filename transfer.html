@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./addmoney.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+<div class="d-flex justify-content-between shadow">
+    <h4 class="mt-4 ms-3"> Transfer</h4>
+    <img style="height: 2pc;" class="mt-4 mx-4" src="./Withdrawal-40@2x.5516439a.png" alt="">
+
+</div>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div id="disp" class="text-center">Total Balance :</div>
+            <button class=" backtodash ms-1"><a class="text-light" href="./next.html"> To dashboard</a></button>
+            <div class="clas border col-sm-6 mx-auto mt-4 border-1">
+                <select name="" style="border-bottom: 2px solid rgb(38, 134, 134);"
+                    class="form-control mt-2 form-select" id="bankSelect">
+                    <option value="FCMB">FCMB</option>
+                    <hr>
+                    <option value="United bank">United bank Africa</option>
+                    <hr>
+                    <option value="Access bank">Access Bank</option>
+                    <hr>
+                    <option value="Diamond bank">Diamond Bank</option>
+                    <hr>
+                    <option value="First bank">First Bank</option>
+                    <hr>
+                    <option value="Fidelity bank">Fidelity Bank</option>
+                    <hr>
+                    <option value="Guaranty Trust bank">Guaranty Trust Bank</option>
+                    <hr>
+                    <option value="Keystone Bank">Keystone Bank</option>
+                    <hr>
+                    <option value="Union Bank">Union Bank</option>
+                    <hr>
+                    <option value="Opay">Opay</option>
+                    <hr>
+                    <option value="PalmPay">PalmPay</option>
+                    <hr>
+                    <option value="Polaris Bank">Polaris Bank</option>
+                    <hr>
+                    <option value="Sterling Bank">Sterling Bank</option>
+                    <hr>
+                    <option value="Wema Bank">Wema Bank</option>
+                    <hr>
+                    <option value="Zenith Bank">Zenith Bank</option>
+                    <hr>
+                    <option value="Parkway Bank">Parkway Bank</option>
+                    <hr>
+                </select>
+                <input class="form-control mt-3 " type="text" placeholder="Account number" id="an">
+                <input class="form-control mt-3" type="text" placeholder="Amount" id="am">
+                <input class="form-control mt-3 " type="text" placeholder="Pin" id="pi">
+                <input class="form-control mt-3 " type="text" placeholder="beneficiary" id="beneficiaryName">
+                <button class="form-control change mt-3 mb-3 text-light" onclick="addMoney()">Send</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+
+        let allUser = JSON.parse(localStorage.getItem("localDetails"))
+        let currentuserdetails = JSON.parse(localStorage.getItem
+            ("currentuserdetails"))
+        disp.innerHTML = ` Total Balance : ₦${allUser[currentuserdetails].balance}`
+        let transFerMoney = []
+        if (localStorage.transferDetails) {
+            transFerMoney = JSON.parse(localStorage.getItem("transferDetails"))
+        }
+
+        const addMoney = () => {
+
+            var setDate = new Date()
+            var minuite = setDate.getMinutes()
+            var hours = setDate.getHours()
+            var seconde = setDate.getSeconds()
+
+            let transferMony = {
+                account: bankSelect.value,
+                AccountNumber: an.value,
+                amountSent: Number(am.value),
+                pin: pi.value,
+                beneficiary: beneficiaryName.value,
+                dateSet: new Date(),
+                min: setDate.getMinutes(),
+                hor: setDate.getHours(),
+                sec: setDate.getSeconds()
+            }
+
+
+            if (!an.value || !am.value || !pi.value || !bankSelect.value || !beneficiaryName.value) {
+                swal("Enter valid details", "You clicked the button!", "error");
+            }
+            else if (isNaN(am.value)) {
+                swal("enter a number", "You clicked the button!", "error");
+                return am.value = ""
+            }
+            else if (Number(am.value) > allUser[Number(currentuserdetails)].balance) {
+                swal("Insufficient funds, kindly top up your account", "You clicked the button!", "error");
+            }
+
+
+
+            else {
+                let allDetailsInformation = JSON.parse(localStorage.getItem("localInformation"))
+                let found = false
+                allDetailsInformation.map((eachDetails) => {
+                    if (eachDetails.accountNumber == an.value && eachDetails.pin == pi.value) {
+                        found = true
+                    }
+
+                    eachDetails.accountNumber
+                })
+                if (found == true) {
+
+                    swal("Transfer successful!", `your transfer of ₦${am.value} has been confirmed.`, "success");
+                    transFerMoney.push(transferMony)
+                    localStorage.setItem("transferDetails", JSON.stringify(transFerMoney))
+                    console.log(transFerMoney)
+                    allUser[Number(currentuserdetails)].balance -= Number(am.value)
+                    disp.innerHTML = `Total Balance : ₦${allUser[Number(currentuserdetails)].balance}`
+                    localStorage.setItem("localDetails", JSON.stringify(allUser))
+                    console.log(allUser)
+                    am.value = ""
+                    pi.value = ""
+                    an.value = ""
+                    bankSelect.value = ""
+                    beneficiaryName.value = ""
+                }
+                else {
+                    swal("incorrect account number or pin!", "You clicked the button!", "error");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

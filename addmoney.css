@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.clas{
+    background-color: white;
+}
+input{
+    border-bottom: 2px solid rgb(38, 134, 134) !important;
+}
+.change{
+    background-color: rgb(38, 134, 134) !important;
+}
+.backtodash ,a{
+    text-decoration: none !important;
+    width: 9pc !important;
+    height: 3pc;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(38, 134, 134) !important;
+}
+option{
+    font-size: 13px;
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./next.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://kit.fontawesome.com/b588fc70d4.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <nav class="navbar bg-light fixed-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex justify-content-between" href="#"
+        style="color:  rgb(38, 134, 134);font-size: 45px;"><img src="./me image.png" alt="">
+        <div id="disp" style="font-size: 50%;text-align: center;color:black;" class="mt-2 ms-2"></div>
+        <!-- <i class="fa-light fa-bell"></i> -->
+      </a>
+      <path
+        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+      </svg>
+
+      <button class="navbar-toggler text-primary toggle-primary " type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon  " style="color: white;">
+        </span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-end  bg-dark">
+          <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5> -->
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body bg-dark border border-1">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+
+              <a class="nav-link active text-light" aria-current="page" href="./index.html">
+                <i class="fa-solid fa-house"></i>
+                Home</a>
+            </li>
+            <li class="nav-item mt-2 mb-1 fs-4 text-dark">
+              <a class="nav-item " href="./js/profile.html"><i class="fa-solid fa-user"></i>profile</a>
+            </li>
+            <li class="nav-item mt-2 mb-1 fs-4 text-dark">
+              <a class="nav-item  " href="./js/profile.html "><i class="fa-solid fa-address-card"></i>About</a>
+            </li>
+            <li class="nav-item mt-2 mb-1 fs-4 text-dark">
+              <a class="nav-item " href="./receipt.html"><i class="fa-thin fa-money-simple-from-bracket"></i>Transaction
+                history</a>
+            </li>
+            <li class="nav-item mt-2 mb-1 fs-4 text-dark">
+              <a class="nav-item " href="./js/profile.html"><i class="fa-solid fa-eject"></i>Other</a>
+            </li>
+            <li class="nav-item mt-2 mb-1 fs-4 text-dark">
+              <a class="nav-item " href="./js/profile.html"><i
+                  class="fa-light fa-rectangle-history-circle-plus"></i>Projects</a>
+            </li>
+            <li class="nav-item mt-2 mb-1 fs-4 text-dark">
+              <a class="nav-item " href="./js/profile.html"><i class="fa-solid fa-list-check"></i>Payroll</a>
+            </li>
+            <li class="nav-item mt-2 mb-1 fs-4 text-dark">
+              <a class="nav-item " href="./js/profile.html"><i class="fa-solid fa-bug"></i> Reports</a>
+            </li>
+            <li class="nav-item mt-2 mb-1 fs-4 text-dark">
+              <a class="nav-item " href="./js/profile.html"><i class="fa-solid fa-gears"></i>Setting</a>
+            </li>
+            <li class="nav-item mt-2 mb-1 fs-4 text-dark">
+              <a class="nav-item " href="./js/profile.html"><i class="fa-sharp fa-solid fa-file-user bg-light"></i>
+                Account</a>
+            </li>
+            <li class="nav-item mt-2 mb-1 fs-4 text-dark">
+              <a class="nav-item " href="./js/profile.html"><i class="fa-solid fa-crate-apple"></i>Apps</a>
+            </li>
+            <li class="nav-item mt-2 mb-1 fs-4 text-dark">
+              <a class="nav-item " href="./index.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+            </li>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary d-lg-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Money</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container col-8">
+            <div class="row">
+              <div class="class  mx-auto border border-1 ">
+                <select name="" style="border-bottom: 2px solid rgb(38, 134, 134);"
+                  class="form-control mt-3 mb-2 form-select" id="selectBnk">
+                  <option value="FCMB">FCMB</option>
+                  <hr>
+                  <option value="United bank">United bank Africa</option>
+                  <hr>
+                  <option value="Access bank">Access Bank</option>
+                  <hr>
+                  <option value="Diamond bank">Diamond Bank</option>
+                  <hr>
+                  <option value="First bank">First Bank</option>
+                  <hr>
+                  <option value="Fidelity bank">Fidelity Bank</option>
+                  <hr>
+                  <option value="Guaranty Trust bank">Guaranty Trust Bank</option>
+                  <hr>
+                  <option value="Keystone Bank">Keystone Bank</option>
+                  <hr>
+                  <option value="Union Bank">Union Bank</option>
+                  <hr>
+                  <option value="Opay">Opay</option>
+                  <hr>
+                  <option value="PalmPay">PalmPay</option>
+                  <hr>
+                  <option value="Polaris Bank">Polaris Bank</option>
+                  <hr>
+                  <option value="Sterling Bank">Sterling Bank</option>
+                  <hr>
+                  <option value="Wema Bank">Wema Bank</option>
+                  <hr>
+                  <option value="Zenith Bank">Zenith Bank</option>
+                  <hr>
+                  <option value="Parkway Bank">Parkway Bank</option>
+                  <hr>
+                </select>
+
+
+                <input type="text" style="border-bottom: 2px solid rgb(38, 134, 134);" class="form-control mt-3 mb-2"
+                  placeholder="Amount" id="amountRender">
+                <input type="text" style="border-bottom: 2px solid rgb(38, 134, 134);" class="form-control mt-3 mb-2"
+                  placeholder="Account No" id="accountsNumber">
+                <input type="text" style="border-bottom: 2px solid rgb(38, 134, 134);" class="form-control mt-3 mb-2"
+                  placeholder=" pin" id="transactionPin">
+                <div id="checking"></div>
+                <button class="form-control text-light mb-3" data-bs-dismiss="modal"
+                  style="background-color: rgb(38, 134, 134);" id="allmoney">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">dismiss</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container ">
+    <div class="row">
+      <div class="class mt-5  ">
+        <div class="contain col-8    mx-auto">
+
+          <div class=" mt-4 d-flex justify-content-around ">
+            <!-- <h6 class="">Transaction History</h6> -->
+            <div class=" justify-content-between">
+
+              <h6>Total balance :<span id="bal"></span></h6>
+              <div id="accNo">Account No:</div>
+            </div>
+          </div>
+          <div class="mx-auto design">
+
+
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./bright-poster-service-application-bank-cards_82574-10874.jpg" class="d-block w-100"
+                    alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="./creative-3d-text-number-777-editable-style-effect-template_333987-2412.jpg"
+                    class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./vector-7-july-shopping-day-flash-sale-design-with-7-7-number-party-balloon-red-background_1314-3473.webp"
+                    class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+
+
+                  </div>
+                </div>
+
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+          <div id="balance" class="btncover mt-5">
+            <div class=" optionselect d-flex justify-content-around">
+
+            </div>
+            <div class="inform ">
+              <div class="box one"><a href="./transfer.html"><button onclick="sendMoney()"><img style="height: 2pc;"
+                      src="./Otransfer-40@2x.2dc4d0c5.png" alt=""> Transfer</button></a></div>
+              <div class="box one"><button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick=""><img
+                    style="height: 2pc;" src="./Addmoneytobalance-40@2x.2525e8a9.png" alt="">Add money<br>
+                  account</button></div>
+
+
+            </div>
+            <div class="inform mt-3">
+              <div class="box two"><button> <img style="height: 2pc;" class="ml-3" src="./bank card.png" alt=""><a
+                    href="./buyairtime.html"> Buy <br>
+                    Airtime</a></button></div>
+              <div class="box two"><button><img src="./Withdrawal-40@2x.5516439a.png" style="height: 2pc;" alt=""> Loan
+                  <br> Account</button></div>
+
+
+            </div>
+            <div class="inform mt-3">
+              <div class="box one"><button><img src="./box2.png" style="height: 2pc;" alt=""> Finance
+                  management</button>
+              </div>
+              <div class="box two"><button><img src="./box6.png " style="height: 2pc;" alt=""> money <br> spend</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- <div class="container-fluid">
+    <div class="row">
+      <div class="border   d-flex justify-content-around bottomdiv ">
+
+        <div class="fs-5 message text-center ">
+          <a href="./index.html"><i class="bi bi-house text-primary"></i></a> <br>
+          Home
+
+        </div>
+        <div class="fs-5 message text-center ">
+          <a href="./js/profile.html"> <i class="bi bi-person text-primary"></i></a> <br>
+          Profile
+
+        </div>
+        <div class="fs-5  message text-center">
+          <i class="bi bi-safe-fill text-primary"></i> <br>
+          finence
+
+        </div>
+        <div class="fs-5 message text-center ">
+          <i class="bi bi-git text-primary"></i> <br>
+          reward
+
+        </div>
+        <div class="fs-5 message text-center">
+          <i class="bi bi-credit-card-fill text-primary"></i> <br>
+          card
+
+        </div>
+      </div>
+    </div> -->
+
+    <script>
+
+
+      let allUser = JSON.parse(localStorage.getItem("localDetails"))
+      let currentuserdetails = JSON.parse(localStorage.getItem("currentuserdetails"))
+      disp.innerHTML = allUser[currentuserdetails].firstname
+      bal.innerHTML = `₦${allUser[currentuserdetails].balance}`
+      let allDetailsInformation = JSON.parse(localStorage.getItem("localInformation"))
+      console.log(allDetailsInformation)
+      allDetailsInformation.map((eachAccount) => {
+
+        accNo.innerHTML = `<div style='font-size:20px;font-weight:600;'>Account No : ${eachAccount.accountNumber}`
+      })
+
+      let deposit = []
+      const accountResult = document.getElementById("bal")
+
+      const amountRender = document.getElementById("amountRender")
+      const allmoney = document.getElementById("allmoney")
+
+      allmoney.addEventListener('click', () => {
+        if (!amountRender.value || !selectBnk.value || !accountsNumber.value || !transactionPin.value) {
+          swal("enter a valid details", "to continue", "error");
+
+        }
+        else if (isNaN(amountRender.value)) {
+          swal("enter a number", "text is not supported", "error");
+          return amountRender.value = ""
+        }
+        else {
+          if (amountRender.value < 100 || amountRender <= 10000) {
+
+            swal("you can only deposit between ₦100 to ₦10,000", "", "error");
+          }
+          else {
+
+            allDetailsInformation = JSON.parse(localStorage.getItem("localInformation"))
+            let found = false
+            allDetailsInformation.map((eachDetails) => {
+              if (eachDetails.pin == transactionPin.value && eachDetails.accountNumber == accountsNumber.value) {
+                found = true
+              }
+
+            })
+            if (found == true) {
+
+              swal("Transfer successful!", `money added ₦${amountRender.value}`, "success");
+              deposit.push(Number(amountRender.value))
+              allUser[Number(currentuserdetails)].balance += Number(amountRender.value)
+              bal.innerHTML = `₦${allUser[Number(currentuserdetails)].balance}`
+              localStorage.setItem("localDetails", JSON.stringify(allUser))
+              amountRender.value = ''
+              selectBnk.value = ''
+              accountsNumber.value = ''
+              transactionPin.value = ''
+            }
+            else {
+              swal("Wroung account number or pin", "", "error");
+            }
+          }
+        }
+      })
+
+
+    </script>
+
+    <script src="./js/bootstrap.js"></script>
+</body>
+
+</html>

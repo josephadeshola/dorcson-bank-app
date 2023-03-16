@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.contain {
+
+  border-radius: 5px;
+  box-shadow: 0 0 10px;
+  width: 27pc !important;
+  height: 20pc !important;
+
+}
+
+input {
+  border: none;
+  box-shadow: 0 0px 2px;
+  width: 17pc !important;
+  margin: auto !important;
+}
+
+button {
+  background-color: rgb(12, 78, 78) !important;
+  margin: auto !important;
+  width: 10pc !important;
+}
+
+
+@media (max-width:700px) {
+  .contain {
+    border-radius: 5px;
+    box-shadow: 0 0 10px;
+    width: 22pc !important;
+    height: 20pc !important;
+
+  }
+
+  .container {
+    margin-top: 4pc;
+  }
+}

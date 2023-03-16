@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="flex">
+        <div class="element-center">
+            <div id="accBalance">
+                <span class="wrap"></span>
+                <h1>total balance</h1>
+                <label for="" id="accountbalanceLbl"></label>
+            </div>
+            <div id="input">
+                <h2>deposit</h2>
+           
+            <input type="text" id="userDeposit">
+            <button id="btnDeposite">Deposit</button>
+
+            <h1>WithDraw</h1>
+            <input type="text" id="userWithDraw">
+            <button id="btnWithDraw">withdraw</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const accountbalanceLbl=document.getElementById("accountbalanceLbl");
+    const deposite=[];
+    const withdraw=[];
+    let totalBalance=500;
+    const userDeposit=document.getElementById("userDeposit");
+    const btnDeposit=document.getElementById("btnDeposite");
+    const userWithDraw=document.getElementById("userWithDraw");
+    const btnWithDraw=document.getElementById("btnWithDraw");
+
+ 
+    btnDeposit.addEventListener('click',()=>{
+       
+        if(isNaN(userDeposit.value)){
+
+            alert("please enter a number")
+            return userDeposit.value='';
+        }
+        else{
+            if(userDeposit.value <0.01 || userDeposit.value >10000){
+                alert("you ac only deposit between $0.01 and $10,000")
+                return userDeposit.value='';
+            }
+            else{
+                deposite.push(Number(userDeposit.value));
+                totalBalance +=(Number(userDeposit.value))
+
+                // let totalform=formatter.format(totalBalance)
+                // document.getElementById("accountbalanceLbl").innerHTML = totalform
+                document.getElementById("accountbalanceLbl").innerHTML=totalBalance
+                console.log(userDeposit.value)
+                return userDeposit.value=''
+            }
+        }
+    })
+
+    btnWithDraw.addEventListener('click',()=>{
+        
+        if(isNaN(userWithDraw.value)){
+            alert("please enter number")
+            return userWithDraw.value=''
+        } else{
+            if(userWithDraw.value > totalBalance -5){
+                alert("no more")
+                return userWithDraw.value=''
+            }else{
+                withdraw.push(Number(userWithDraw.value))
+                totalBalance -=(Number(userWithDraw.value))
+                document.getElementById("accountbalanceLbl").innerHTML=totalBalance
+            
+                console.log(userWithDraw.value)
+                return userWithDraw.value=''
+            }
+        }
+    })
+</script>
+</body>
+</html>

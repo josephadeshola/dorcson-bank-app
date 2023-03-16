@@ -1,0 +1,63 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#checkbox{
+    width: 5pc;
+    height: 5pc;
+}
+.btnairtime{
+    margin: auto !important;
+    width: 5pc !important;
+    height: 5pc;
+    border: none;
+}
+.btnairtime img{
+    height:20px; 
+    border-radius: 10pc !important;
+}
+.amount{
+    border: none;
+    height: 3pc ;
+    width: 5pc;
+    margin-bottom: 1pc;
+    margin-left: 23px;
+}
+.disp{
+    margin-top: 1pc;
+    display: grid;
+    gap: 1pc;
+
+    grid-template-columns: repeat(3,1fr);
+}
+.floe{
+    width:20pc !important;
+}
+.pay{
+    border: none;
+    width: 4pc;
+    border-radius:6px;
+    /* height: 3pc; */
+}
+.checkbox{
+    position: absolute;
+    top: 12pc !important;
+}
+@media (max-width:688px) {
+    .btnairtime{
+        margin: auto !important;
+        width: 5pc !important;
+        height: 5pc;
+        border: none;
+    } 
+    .container{
+        margin-top: 5pc;
+        width: 26pc !important;
+    } 
+    .checkbox{
+        position: absolute;
+        top: 17pc !important;
+        /* right: 20pc;     */
+        }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row ">
+            <h4 class="text-center mt-4 text-light " >PROFILE</h4>
+            <div class="contain mx-auto">
+
+                <div  class="mt-5 rounded text-light profile" id="disp"></div>
+                <div  class="mt-5 rounded text-light profile" id="dispss"></div>
+                <div  class="mt-5 rounded text-light profile" id="dispsss"></div>
+                <div  class="mt-5 rounded text-light profile" id="dispssss"></div>
+                <div  class="mt-5 rounded text-light profile" id="dispsssss"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let allUser = JSON.parse(localStorage.getItem("localDetails"))
+        let currentuserdetails = JSON.parse(localStorage.getItem("currentuserdetails"))
+        disp.innerHTML = `Name : ${allUser[currentuserdetails].firstname} `
+        dispss.innerHTML = `Email : ${allUser[currentuserdetails].email}`
+        let allDetailsInformation = JSON.parse(localStorage.getItem("localInformation"))
+        allDetailsInformation.map((eachAccount) => {
+            console.log(eachAccount.gender)
+            dispsss.innerHTML = `Acc no : ${eachAccount.accountNumber}`
+            dispsssss.innerHTML= `Gender :${eachAccount.gender}`
+        })
+        dispssss.innerHTML = `Date of Birth: ${allUser[currentuserdetails].dtaeofBirth}`
+
+    </script>
+</body>
+
+</html>

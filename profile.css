@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+   background-color: black !important;
+}
+.contain{
+    border-radius: 10px;
+    border: 1px solid white;
+    height: 30pc;
+    width: 20pc !important;
+}
+.profile{
+    border-bottom: 1px solid white !important;
+}
+@media (max-width:688px) {
+    .contain{
+        border-radius: 10px;
+        border: 1px solid white;
+        height: 33pc;
+        width: 27pc !important;
+    }
+    .profile{
+        margin-bottom: 4pc !important;
+        border-bottom: 1px solid white !important;
+    }
+    } 
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./signin.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+</head>
+
+<body>
+    <div class="container  mt-3  mx-auto">
+        <div class="row">
+            <div class="contain col-3 border border-1 mx-auto shadow  ">
+                <h3 class="text-center ">Create Account</h3>
+                <div id="alartmsg" class="text-center"></div>
+                <h6 class="text-dark">FULL NAME</h6>
+                <input type="text" class="form-control " placeholder="Name" id="first">
+                <div id="dispsss"></div>
+                <h6 class="text-dark">EMAIL</h6>
+                <input type="text" class="form-control " placeholder="Email" id="email">
+                <div id="disp"></div>
+                <div id="dispssss"></div>
+                <h6 class="text-dark">DATE OF BIRTH</h6>
+                <input type="date" class="form-control" placeholder="Date of Birth" id="dtaeOfBirth">
+                <div id="dispsssss"></div>
+                <h6 class="text-dark">SET PASSWORD</h6>
+                <input type="password" class="form-control " placeholder="Password" id="pass">
+                <div id="disps"></div>
+                <h6 class="text-dark">CONFIRM PASSWORD</h6>
+                <input type="password" class="form-control " placeholder="Reset password" id="last">
+                <div id="dispss"></div>
+                <span>
+                    <input type="checkbox" class="ms-3 mt-2" id="check">
+                    Accept all cookies and <span style="color: rgb(11, 156, 156) ;"> policy,privacy </span>
+                </span>
+                <button class="btn  mt-3 width " onclick="signIn()">sign up</button>
+                <p class="text-center">Already have an account? <a href="./signup.html">Sign in</a></p>   
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+
+        let allUser = []
+        function showAlart(msg, className) {
+            alartmsg.innerText = msg;
+            alartmsg.className = className
+        }
+        if (localStorage.localDetails) {
+            allUser = JSON.parse(localStorage.getItem("localDetails"))
+            console.log(allUser)
+
+        }
+        const signIn = () => {
+            
+            let userDetails =
+            {
+                firstname: first.value,
+                email: email.value,
+                dtaeofBirth: dtaeOfBirth.value,
+                password: pass.value,
+                confirmpassword: last.value,
+                balance: 500
+                
+                
+            }
+        
+            let regexForPhone = /^\w+([.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+            if (first.value == "" || last.value == "" || pass.value == "") {
+                first.className = "form-control is-invalid"
+                last.className = "form-control is-invalid"
+                email.className = "form-control is-invalid"
+                pass.className = "form-control is-invalid"
+                dtaeOfBirth.className = "form-control is-invalid"
+               
+                disps.innerHTML = "<div class='text-danger'>This field is required</div>"
+                dispss.innerHTML = "<div class='text-danger'>This field is required</div>"
+                dispsss.innerHTML = "<div class='text-danger'>This field is required</div>"
+                dispsssss.innerHTML = "<div class='text-danger'>This field is required</div>"
+            }
+
+            else if (!regexForPhone.test(email.value)) {
+                disp.innerHTML = "enter a valid email address"
+                disp.className = "text-danger"
+                email.className = "form-control is-invalid"
+            }
+            else if (check.checked == false) {
+                alert("accept all cookies")
+            }
+            else if (pass.value !== last.value) {
+                showAlart("wroung password", "alert alert-danger text-center")
+                setTimeout(() => {
+                    alartmsg.className = ""
+                    alartmsg.innerText = ""
+                }, 2000)    
+            }
+
+            else {
+    
+                first.className = "form-control is-valid"
+                email.className = "form-control is-valid"
+                pass.className = "form-control is-valid"
+                last.className = "form-control is-valid"
+                dtaeOfBirth.className = "form-control is-valid"
+                last.value = "";
+                first.value = "";
+                email.value = "";
+                pass.value = "";
+                dtaeOfBirth.value = "";
+                check.value = "";
+                allUser.push(userDetails)
+                localStorage.setItem("localDetails", JSON.stringify(allUser))
+                window.location.href = "signup.html"
+                console.log(allUser)
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

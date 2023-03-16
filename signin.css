@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.contain{
+    box-shadow: 0 0 10px;
+    width: 23pc !important;
+    height: 36pc !important;
+    /* padding-top: 2pc; */
+    
+  }
+  span{
+    font-size: 13px;
+  }
+ 
+ 
+  .form-control{
+      width: 19pc !important;
+      margin: auto !important;
+  }
+ 
+  h6{
+    
+    font-size: 2px !important;
+    margin-left: 2pc;
+    margin-top: 5px !important;
+  }
+  #alartmsg{
+    height: 3pc;
+    
+  }
+  
+  button{
+  
+    margin-left:64px !important ;
+    width: 14pc !important;
+    color: white !important;
+   background-color: rgb(38, 134, 134) !important;
+  }
+  #disp,#disps,#dispss,#dispsss,#dispssss,#dispsssss{
+    font-size: 11px;
+    margin-left: 2pc;
+    
+  }
+  h3{
+    text-shadow: 2px 2px navy;
+    color: white;
+  }
+@media (max-width:700px) {
+  
+    .contain{
+        width: 40pc !important;
+    }
+    span{
+      font-size: 13px;
+    }
+   
+
+      .contain{
+        box-shadow: 0 0 10px;
+        width: 20pc !important;
+        height:37pc !important;
+        margin-top:50px !important;
+        padding-top: 1pc;
+        
+      }
+     
+  
+      .form-control{
+        /* border:1px solid rgb(105, 99, 99) !important; */
+          width: 16pc !important;
+          margin: auto !important;
+      }
+      h6{
+        font-size: 2px !important;
+        margin-left: 2pc;
+        margin-top: 5px !important;
+      }
+      
+      button{
+        margin-left:17px !important ;
+        width: 16pc !important;
+        color: white !important;
+      
+      }
+    
+}

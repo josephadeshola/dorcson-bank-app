@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./confirm.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+</head>
+
+<body>
+    <div class="container  ">
+        <h4 class="text-center text-dark mt-2">BANK DETAILS</h4>
+        <div class="row">
+            <div class="clas border border-2 mx-auto ">
+                <!-- <img src="./developers-4.png" style="height: 25pc;position:absolute;top: 10pc;opacity: 0.3;" class="confirmimg" alt=""> -->
+                <p class="text-center text-dark mt-2 fs-6">Please provide your social security Number and account
+                    information
+                    below</p>
+                <select name="" id="pick" class="form-control form-select  mt-3">
+                    <option value="">select Number</option>
+                    <option value="BVN"> BVN</option>
+                    <option value="Phone Number"> Phone Number</option>
+                    <option value="NIN">NIN</option>
+                </select>
+                <div id="disps"></div>
+                <select id="accountType" name="" class="form-control form-select mt-3">
+                    <option value="">Account Type</option>
+                    <option value="Real Account">Real Account</option>
+                    <option v3lue="Personal Account">Personal Account</option>
+                    <option value="Normal Account">Normal Account</option>
+                    </section>
+                    <div id="disps"></div>
+
+                    <input type="password" class="form-control mt-3" placeholder="Pin" id="pi">
+                    <div id="disp"></div>
+                    <input type="text" class="form-control mt-3" placeholder="email" id="em">
+                    <div id="disps"></div>
+
+                    <select name="" class="form-select form-control mt-3" id="genDer">
+                        <option value="0">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <div id="disps"></div>
+
+                    <!-- <input type="text" class="form-control mt-3" placeholder="Gender" id="genDer"> -->
+                    <button onclick=" getStarted()" class="form-control w-50 mx-auto mt-3 mb-3"> continue</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //  allUser = JSON.parse(localStorage.getItem("localDetails"))
+        // allUser.map((findAccount)=>{
+        //     console.log(findAccount.accountNumber)
+        // })
+        let allDetailsInformation = []
+        if (localStorage.allDetailsInformation) {
+            allDetailsInformation = JSON.parse(localStorage.getItem("localInformation"))
+            console.log(allDetailsInformation)
+        }
+        pi.value == ""
+        em.value == ""
+        genDer.value == ""
+        pick.value == ""
+        accountType.value == ""
+        const getStarted = () => {
+            var accountNumber = Math.round(Math.random() * 100000000)
+            let take = pick.value
+            let eachUser = {
+                pin: pi.value,
+                email: em.value,
+                gender: genDer.value,
+                selectType: pick.value,
+                accountType: accountType.value,
+                accountNumber: "01" + accountNumber,
+
+            }
+
+            let regexForPhone = /^[\d]{4}$/
+
+            if (pi.value == "" || genDer.value == "" || em.value == "" || pick.value == "" || accountType == "") {
+                alert("This field is required.")
+                disps.className = "text-danger"
+                pi.className = "form-control is-invalid"
+                genDer.className = "form-control is-invalid"
+                em.className = "form-control is-invalid"
+                pick.className = "form-control is-invalid"
+                accountType.className = "form-control is-invalid"
+            }
+            else if (!regexForPhone.test(pi.value)) {
+                disp.innerHTML = "<div class='ms-1 warning'>Mininum of 4-digit</div>"
+                disp.className = "text-danger"
+                pi.className = "form-control is-invalid"
+            }
+
+            else {
+                pi.className = "form-control is-valid  "
+                disps.className = "text-success"
+                genDer.className = "form-control is-valid  "
+                em.className = "form-control is-valid  "
+                pick.className = "form-control is-valid  "
+                accountType.className = "form-control is-valid"
+
+
+                allUser = JSON.parse(localStorage.getItem("localDetails"))
+                var found = false
+                allUser.map((users, index) => {
+                    if (users.email == em.value) {
+                       
+                        found = true
+                    }
+                })
+            }
+
+
+            if (found == true) {
+                // swal("Details confirm",  "You clicked the button!", "success");
+                setTimeout(()=>{
+                    window.location.href = "next.html"
+
+                },000)
+
+            }
+            else if (found == false) {
+                em.className = "form-control is-invalid"
+                // swal("email is not matching",  "You clicked the button!", "error"); 
+            }
+
+            allDetailsInformation.push(eachUser)
+            localStorage.setItem("localInformation", JSON.stringify(allDetailsInformation))
+            console.log(allDetailsInformation)
+        }
+
+    </script>
+
+
+</body>
+
+</html>
