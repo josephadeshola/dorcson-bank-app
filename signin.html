@@ -14,7 +14,11 @@
 <body>
     <div class="container  mt-3  mx-auto">
         <div class="row">
-            <div class="contain col-3 border border-1 mx-auto shadow  ">
+          
+
+                <img class="position-absolute d-block d-md-none topimg" src="./young-couple-with-smart-phone.jpg" alt="">
+            
+            <div class="contain col-3 border border-1 mx-auto shadow">
                 <h3 class="text-center ">Create Account</h3>
                 <div id="alartmsg" class="text-center"></div>
                 <h6 class="text-dark">FULL NAME</h6>
@@ -67,9 +71,7 @@
                 dtaeofBirth: dtaeOfBirth.value,
                 password: pass.value,
                 confirmpassword: last.value,
-                balance: 500
-                
-                
+                balance: 500   
             }
         
             let regexForPhone = /^\w+([.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/

@@ -4,8 +4,15 @@
     box-sizing: border-box;
 }
 .recieptcontainer{
-    height: 37pc;
+    height: 38pc;
     /* width: 27pc ; */
-}span{
+}
+span{
     font-size: 14px;
+}
+@media (max-width:600px) {
+    .recieptcontainer{
+        height: 44pc;
+       
+    }
 }

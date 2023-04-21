@@ -6,27 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="receipt.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 </head>
 
 <body>
     <div class="container ">
         <div class="row ">
-            <div class="mt-3 col-12 col-md-4  mx-auto  class recieptcontainer border border-1 ">
-                <div class="m-auto mt-2">
+            <div class="mt-3 col-12 col-md-4  mx-auto shadow class recieptcontainer  ">
+                <div class="m-auto " id="general">
                     <img style="height:5pc;" class="text-center" src="./download.png" alt="">
                     <h4 class="  text-center">Dorcson Bank App</h4>
                     <div id="disp"></div>
                     <hr class="text-primary">
 
-                    <p class="mt-2 ms-3">Bank: <span id="linkBankType" class="ms-2"></span></p>
-                    <p class="mt-2 ms-3">Transation Date: <span id="linkDate" class="ms-2"></span></p>
-                    <p class="mt-2 ms-3">Amount: <span id="linkAmount" class="ms-2"></span></p>
-                    <p class="mt-2 ms-3">beneficiary name: <span id="linkAccount" class="ms-2"></span></p>
-                    <p class="mt-2 ms-3"> Account Number: <span id="linkAccNumber" class="ms-2"></span></p>
-                    <p class="mt-2 ms-3">Time:<span id="hours"></span></p>
-                    <dutton class="btn btn-light shadow mt-2 ms-2">Download</dutton>
+                    <p class=" ms-3">Bank: <span id="linkBankType" class="ms-2"></span></p>
+                    <p class=" ms-3">Transation Date: <span id="linkDate" class="ms-2"></span></p>
+                    <p class=" ms-3">Amount: <span id="linkAmount" class="ms-2"></span></p>
+                    <p class=" ms-3">beneficiary name: <span id="linkAccount" class="ms-2"></span></p>
+                    <p class=" ms-3"> Account Number: <span id="linkAccNumber" class="ms-2"></span></p>
+                    <p class=" ms-3">Time:<span id="hours"></span></p>
+                    <div class="float-end">
+
+                        <button class="btn btn-light shadow   float" onclick="downloadReceipt()">Download</button>
+                    </div>
                 </div>
 
             </div>
@@ -51,8 +59,20 @@
             linkAccount.innerHTML = `<div class="fw-bold" style="font-size:14px ;">${eachDetails.beneficiary}`
             linkBankType.innerHTML = `<div class="fw-bold" style="font-size:14px ;">${eachDetails.account}`
             linkDate.innerHTML = `<div class="fw-bold" style="font-size:14px ;">${eachDetails.dateSet}`
-                hours.innerHTML=`<div class="fw-bold" style="font-size:14px ;">${eachDetails.hor}: ${eachDetails.sec} :${eachDetails.min} `
+            hours.innerHTML = `<div class="fw-bold" style="font-size:14px ;">${eachDetails.hor}: ${eachDetails.sec} :${eachDetails.min} `
         })
+
+        const downloadReceipt = () => {
+            function addScript(url) {
+                var script = document.createElement('script');
+                script.type = 'application/javascript';
+                script.src = url;
+                document.head.appendChild(script);
+            }
+            var element = document.getElementById('general');
+            html2pdf(element);
+            addScript('https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js');
+        }
     </script>
 </body>
 
