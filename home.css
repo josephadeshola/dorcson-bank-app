@@ -312,7 +312,7 @@ p {
 
     .servicediv {
         margin: auto;
-        width: 22pc;
+        width: 21pc !important;
    
     }
 

@@ -92,7 +92,7 @@
   </button>
 
   <!-- Modal -->
-  <div class="modal fade col-12 " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade col-12   " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog ">
       <div class="modal-content  ">
         <div class="modal-header">
@@ -172,7 +172,11 @@
             <div class=" justify-content-between">
 
               <h6>Total balance :<span id="bal"></span></h6>
-              <div id="accNo">Account No:</div>
+              <div class="d-flex justify-content-between">
+                 <!-- <input type="text"  id="accNo"> -->
+                <div  id="accNo">Account No:</div>
+                <!-- <i class="bi bi-clipboard" style="cursor: pointer;" onclick="copyText()"></i> -->
+              </div>
             </div>
           </div>
           <div class="mx-auto design">
@@ -263,39 +267,24 @@
     </div>
   </div>
   </div>
-  <!-- <div class="container-fluid">
-    <div class="row">
-      <div class="border   d-flex justify-content-around bottomdiv ">
-
-        <div class="fs-5 message text-center ">
-          <a href="./index.html"><i class="bi bi-house text-primary"></i></a> <br>
-          Home
-
-        </div>
-        <div class="fs-5 message text-center ">
-          <a href="./js/profile.html"> <i class="bi bi-person text-primary"></i></a> <br>
-          Profile
-
-        </div>
-        <div class="fs-5  message text-center">
-          <i class="bi bi-safe-fill text-primary"></i> <br>
-          finence
-
-        </div>
-        <div class="fs-5 message text-center ">
-          <i class="bi bi-git text-primary"></i> <br>
-          reward
-
-        </div>
-        <div class="fs-5 message text-center">
-          <i class="bi bi-credit-card-fill text-primary"></i> <br>
-          card
-
-        </div>
-      </div>
-    </div> -->
+  
 
     <script>
+
+      // const copyText=()=>{
+      //   let copyTextNo=document.getElementById("accNo");
+      //   copyTextNo.select()
+      //   copyTextNo.setSelectionRange(0, 99999)
+      //   navigator.clipboard.writeText(copyTextNo.innerHTML);
+      //   alert("copied the text:" + copyTextNo.innerHTML)
+      //   .then(()=>{
+      //     console.log("good")
+      //   })
+      //   .catch((err)=>{
+      //     console.log(err);
+      //   })
+        
+      // }
 
 
       let allUser = JSON.parse(localStorage.getItem("localDetails"))

@@ -133,5 +133,9 @@
     color: white !important;
   
   }
+  h6{
+    margin-left: 3pc;
+    font-size: 12px !important;
+  }
   
 }
