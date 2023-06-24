@@ -112,13 +112,7 @@ b {
     display: block;
 }
 
-.bordertext {
-   background-image: url(./young-couple-with-smart-phone.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   
-    height: 38pc;
-}
+
 
 h1 {
     font-size: 50px !important;
@@ -275,7 +269,7 @@ p {
     }
     .bordertext {
         
-        background-image: url(./young-couple-with-smart-phone.jpg);
+        background-image: url(./3d-rendering-credit-card-with-bank-building-clipping-path-included_582173-43-removebg-preview.png);
         background-repeat: no-repeat;
 
         border-bottom-left-radius: 10px ;
